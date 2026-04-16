@@ -1,5 +1,5 @@
 {
-  "name": "@sendblue/browser-agent",
+  "name": "@sendblue-api/browser-agent",
   "version": "0.1.0",
   "description": "HTTP API server for AI-driven browser automation. Give Claude a REST API to control a real browser — no vision model needed.",
   "license": "MIT",
@@ -39,6 +39,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sendblue/browser-agent.git"
+    "url": "https://github.com/sendblue-api/browser-agent.git"
   }
 }
