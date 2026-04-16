@@ -10,7 +10,6 @@
 
 import * as os from "os";
 import * as path from "path";
-import * as child_process from "child_process";
 import { launchBrowser, closeBrowser, BrowserConfig } from "./browser";
 import { createServer, printBanner, ServerConfig } from "./server";
 
@@ -50,21 +49,6 @@ const serverConfig: ServerConfig = {
 // Main
 // ---------------------------------------------------------------------------
 
-function freePort(port: number): void {
-  try {
-    const pids = child_process
-      .execSync(`lsof -ti:${port} 2>/dev/null || true`)
-      .toString()
-      .trim();
-    if (pids) {
-      child_process.execSync(`kill -9 ${pids.split("\n").join(" ")} 2>/dev/null || true`);
-      console.log(`  freed port ${port} (killed pid ${pids.replace(/\n/g, ", ")})`);
-    }
-  } catch {
-    // lsof not available or nothing to kill — continue
-  }
-}
-
 async function main(): Promise<void> {
   console.log("\nbrowser-agent starting…");
   console.log(`  headless:   ${HEADLESS}`);
@@ -74,9 +58,6 @@ async function main(): Promise<void> {
   console.log(`  start path: ${START_PATH}`);
   if (AUTH_STATE) console.log(`  auth state: ${AUTH_STATE}`);
   console.log("");
-
-  // Clear the port before launching so we never get EADDRINUSE
-  freePort(PORT);
 
   // Launch browser
   const instance = await launchBrowser(browserConfig);
