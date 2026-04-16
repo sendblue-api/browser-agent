@@ -1,0 +1,44 @@
+{
+  "name": "@sendblue/browser-agent",
+  "version": "0.1.0",
+  "description": "HTTP API server for AI-driven browser automation. Give Claude a REST API to control a real browser — no vision model needed.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "browser-agent": "dist/index.js"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "playwright",
+    "browser-automation",
+    "ai",
+    "claude",
+    "llm",
+    "mcp",
+    "headless",
+    "chromium",
+    "http-api",
+    "accessibility",
+    "aria"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sendblue/browser-agent.git"
+  }
+}

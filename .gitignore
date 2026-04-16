@@ -1,0 +1,16 @@
+node_modules/
+dist/
+
+# Local config — may contain secrets (session tokens, etc.)
+.env
+auth.json
+*.storage.json
+
+# Screenshots are ephemeral
+/screenshots/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# macOS
+.DS_Store
